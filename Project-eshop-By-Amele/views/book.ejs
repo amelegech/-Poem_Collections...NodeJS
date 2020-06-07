@@ -1,0 +1,36 @@
+<%- include('fragments/head.ejs')%>
+<body>
+
+    <%- include('fragments/navigation.ejs')%>
+
+<div id="demo" class="carousel slide" data-ride="carousel">
+    <!-- The slideshow -->
+    <div class="carousel-inner">
+        <% for(let i = 1; i< 10; i++) { %>
+        <div class="carousel-item active">
+            <img src="images/img01<%= i %>.jpg" alt="mybook" width="200" height="300">
+            <!-- <img src="images/img11<link rel="stylesheet" href="./css/main.css" />.jpg" alt="Los Angeles" width="1100" height="500"> -->
+            <!-- <img src="images/img11.jpg" alt="my book" width="1350" height="600"> -->
+        </div>
+        <% } %>
+
+    </div>
+</div>
+
+
+<div class="auth-container">
+    <div class="auth-items"></div>
+    <div class="auth-items"></div>
+    <div class="auth-items">
+        <h1>Welcom to e-Poems!</h1>
+
+        <a class="btn btn-warning" href="/signin" style="width: 100%;">Sign-In</a>
+        <br>
+        <p style="text-align: center;">New to eMarket?</p>
+        <a class="btn btn-secondary" href="/signup" style="width: 100%;">Create your e-Poem account</a>
+    </div>
+    <div class="auth-items"></div>
+    <div class="auth-items"></div>
+</div>
+<!--includ footer-->
+<%- include('fragments/end.ejs')%>

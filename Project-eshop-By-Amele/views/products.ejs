@@ -1,0 +1,33 @@
+<!--comeback to include head.ejs-->
+<%- include('fragments/head.ejs')%>
+
+<body>
+
+    <!--come back to insert navigation.ejs-->
+    <%- include('fragments/navigation.ejs')%>
+
+    <div class="container">
+        <div class="row">
+            <% for(let prod of products){%>
+            <div class="col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading"><%= prod.title%> - $<%= prod.price%></div>
+                    <div class="panel-body"><img src="<%= prod.imageUrl%>" class="img-responsive"
+                            style="width:100%" alt="Image"></div>
+                    <div class="panel-footer">
+                        <a class="btn btn-primary" href="/products/<%= prod._id%>" role="button">View Detail</a>
+                        <!-- <a class="btn btn-primary" href="/edit-product/<%= prod._id%>" role="button">Edit</a> -->
+                        <form action="/delete-product" method="post">
+                            <input type="hidden" name="id" value="<%= prod._id%>">
+                            <!-- <button type="submit" class="btn btn-danger">DELETE</button> -->
+                        </form>
+                    </div>
+                </div>
+            </div> 
+            <% } %>
+        </div>
+    </div><br>
+
+
+   <!--come back to insert end.ejs-->
+   <%- include('fragments/end.ejs')%>

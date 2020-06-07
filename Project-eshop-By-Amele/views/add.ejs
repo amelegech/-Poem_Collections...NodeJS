@@ -1,0 +1,22 @@
+<%- include('fragments/head.ejs')%>
+
+<body>
+
+    <%- include('fragments/navigation.ejs')%>
+
+    
+    <div class="container">
+        <form action="/save-product" method="post">
+            <label for="title">Title:</label><br>
+            <input type="text" id="title" name="title"><br>
+            <label for="imageUrl">Image URL:</label><br>
+            <input type="text" id="imageUrl" name="imageUrl"><br><br>
+            <label for="price">Price:</label><br>
+            <input type="number" id="price" name="price"><br><br>
+            <label for="description">Description:</label><br>
+            <textarea name="description"></textarea>
+            <!-- <input type="submit" id="button" value="Submit"> -->
+        </form>
+    </div>
+
+    <%- include('fragments/end.ejs')%>
